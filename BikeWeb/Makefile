@@ -6,10 +6,10 @@ GOPATH:=$(shell go env GOPATH)
 
 build:
 
-	go build -o IhomeWeb-web main.go plugin.go
+	go build -o BikeWeb-web main.go plugin.go
 
 test:
 	go test -v ./... -cover
 
 docker:
-	docker build . -t IhomeWeb-web:latest
+	docker build . -t BikeWeb-web:latest
