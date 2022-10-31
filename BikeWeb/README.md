@@ -1,11 +1,11 @@
 # BikeWeb Service
 
-This is the IhomeWeb service
+This is the BikeWeb service
 
 Generated with
 
 ```
-micro new sss/IhomeWeb --namespace=go.micro --type=web
+micro new sss/BikeWeb --namespace=go.micro --type=web
 ```
 
 ## Getting Started
@@ -16,9 +16,9 @@ micro new sss/IhomeWeb --namespace=go.micro --type=web
 
 ## Configuration
 
-- FQDN: go.micro.web.IhomeWeb
+- FQDN: go.micro.web.BikeWeb
 - Type: web
-- Alias: IhomeWeb
+- Alias: BikeWeb
 
 ## Dependencies
 
@@ -44,7 +44,7 @@ make build
 
 Run the service
 ```
-./IhomeWeb-web
+./BikeWeb-web
 ```
 
 Build a docker image
