@@ -14,7 +14,10 @@ https://leetcode.cn/submissions/detail/372648888/
 
 ![image](https://user-images.githubusercontent.com/96447102/199101601-eeaee32b-3eb0-452b-8547-76e9172d1a79.png)
 
+
 注册流程
+
+
 ![image](https://user-images.githubusercontent.com/96447102/199977863-1654ce94-91cf-4fda-aea3-e3b6e94197bf.png)
 
 ![image](https://user-images.githubusercontent.com/96447102/199977992-b9adb19f-af2f-432f-804e-89c9491ef690.png)
