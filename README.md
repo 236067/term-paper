@@ -65,17 +65,17 @@ http://127.0.0.1:8080
 
 01 веб-сервис /
 
-02 Служба получения информации об области GET api/v1.0/areas GetArea
+02 Служба получения информации об области  GET api/v1.0/areas  GetArea
 
-03 Получите сервис изображений кода подтверждения GET api/v1.0/imagecode/:uuid GetImageCd
+03 Получите сервис изображений кода подтверждения  GET  api/v1.0/imagecode/:uuid  GetImageCd
 
-04 Служба отправки информации о регистрации POST api/v1.0/users PostRet
+04 Служба отправки информации о регистрации  POST  api/v1.0/users  PostRet
 
-05 Служба получения информации о сеансе GET api/v1.0/session GetSession
+05 Служба получения информации о сеансе  GET  api/v1.0/session  GetSession
 
-06 Служба отправки информации для входа в систему POST api/v1.0/sessions PostLogin
+06 Служба отправки информации для входа в систему  POST  api/v1.0/sessions  PostLogin
 
-07 Удалить (выйти) служба информации о входе в систему DELETE api/v1.0/session DeleteSession
+07 Удалить (выйти) служба информации о входе в систему  DELETE  api/v1.0/session  DeleteSession
 
 
 
