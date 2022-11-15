@@ -1,23 +1,47 @@
 # term paper
 Разработать микросервисное приложение для проката велосипедов.
 
-Leetcode:
-https://leetcode.cn/submissions/detail/372649510/
+1. Описание
 
-https://leetcode.cn/submissions/detail/372648888/
-
-搭建地区示意图
-
-![image](https://user-images.githubusercontent.com/96447102/199095775-1a9d23b2-33a1-41a2-a2a7-a56eb0504670.png)
-
-地区与服务和web的逻辑关系
-
-![image](https://user-images.githubusercontent.com/96447102/199101601-eeaee32b-3eb0-452b-8547-76e9172d1a79.png)
+Это кейс проекта с микросервисной архитектурой в качестве основной части и бизнесом по аренде велосипедов в качестве процесса.
 
 
-注册流程
+2. Общий код ошибки
 
+Код ошибки Объяснение ошибки Соответствует английскому языку
 
-![image](https://user-images.githubusercontent.com/96447102/199977863-1654ce94-91cf-4fda-aea3-e3b6e94197bf.png)
+0 успех RECODE_OK
 
-![image](https://user-images.githubusercontent.com/96447102/199977992-b9adb19f-af2f-432f-804e-89c9491ef690.png)
+4001 Ошибка запроса к базе данных RECODE_DBERR
+
+4002 Нет данных RECODE_NODATA
+
+4003 Данные уже существуют RECODE_DATAEXIST
+
+4004 Ошибка данных RECODE_DATAERR
+
+4101 Пользователь не вошел в систему RECODE_SESSIONERR
+
+4102 Ошибка входа пользователя RECODE_LOGINERR
+
+4103 Ошибка параметра RECODE_PARAMERR
+
+4104 Пользователь уже зарегистрирован RECODE_USERONERR
+
+4105 Ошибка идентификации пользователя RECODE_ROLEERR
+
+4106 Ошибка пароля RECODE_PWDERR
+
+4107 Пользователь не существует RECODE_USERERR
+ 
+4109 Ошибка номера мобильного телефона RECODE_MOBILEERR
+
+4201 Недопустимый запрос или ограниченное количество запросов RECODE_REQERR
+
+4202 IP-адрес ограничен RECODE_IPERR
+
+4302 Ошибка чтения/записи файла RECODE_IOERR
+
+4500 Внутренняя ошибка RECODE_SERVERERR
+
+4501 Неизвестная ошибка RECODE_UNKNOWERR
