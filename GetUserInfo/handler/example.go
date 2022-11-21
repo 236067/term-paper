@@ -4,8 +4,8 @@ import (
 	"context"
 
 	example "GetUserInfo/proto/example"
-	"IhomeWeb/model"
-	"IhomeWeb/utils"
+	"BikeWeb/model"
+	"BikeWeb/utils"
 	"github.com/astaxie/beego/adapter/orm"
 	"github.com/garyburd/redigo/redis"
 	"log"
