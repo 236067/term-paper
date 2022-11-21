@@ -9,8 +9,8 @@ import (
 	"go-micro.dev/v4"
 
 	GETUSERINFO "GetUserInfo/proto/example"
-	"IhomeWeb/model"
-	"IhomeWeb/utils"
+	"BikeWeb/model"
+	"BikeWeb/utils"
 
 	POSTLOGIN "PostLogin/proto/example"
 	POSTRET "PostRet/proto/example"
