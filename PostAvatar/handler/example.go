@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"IhomeWeb/model"
-	"IhomeWeb/utils"
+	"BikeWeb/model"
+	"BikeWeb/utils"
 	example "PostAvatar/proto/example"
 	"context"
 	"github.com/astaxie/beego/adapter/orm"
