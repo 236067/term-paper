@@ -2,8 +2,8 @@ package handler
 
 import (
 	example "GetUserHouses/proto/example"
-	"IhomeWeb/model"
-	"IhomeWeb/utils"
+	"BikeWeb/model"
+	"BikeWeb/utils"
 	"context"
 	"encoding/json"
 	"fmt"
