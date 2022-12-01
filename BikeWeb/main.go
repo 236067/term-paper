@@ -1,7 +1,7 @@
 package main
 
 import (
-	"IhomeWeb/handler"
+	"BikeWeb/handler"
 	_ "IhomeWeb/model"
 	"github.com/go-acme/lego/log"
 	"go-micro/web"
@@ -45,6 +45,10 @@ func main() {
 	rou.POST("/api/v1.0/user/avatar", handler.PostAvatar)
 	//身份认证检查 同  获取用户信息   所调用的服务是 GetUserInfo
 	rou.GET("/api/v1.0/user/auth", handler.GetUserAuth)
+	//获取用户已发布房源信息服务
+	rou.GET("/api/v1.0/user/houses", handler.GetUserHouses)
+	//发送（发布）房源信息服务
+	rou.POST("/api/v1.0/houses_bike", handler.PostHouses)
 
 	service.Handle("/", rou)
 	// 服务运行
