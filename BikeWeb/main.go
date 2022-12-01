@@ -13,7 +13,7 @@ import (
 func main() {
 	// 构造web服务
 	service := web.NewService(
-		web.Name("go.micro.web.IhomeWeb"),
+		web.Name("go.micro.web.BikeWeb"),
 		web.Version("latest"),
 		web.Address(":22333"),
 	)
