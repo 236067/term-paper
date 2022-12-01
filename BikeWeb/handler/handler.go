@@ -520,3 +520,111 @@ func GetUserAuth(w http.ResponseWriter, r *http.Request, params httprouter.Param
 		return
 	}
 }
+
+func GetUserHouses(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	beego.Info("获取当前用户所发布的房源 GetUserHouses /api/v1.0/user/bike_houses")
+	cli := micro.NewService()
+	cli.Init()
+	// call the backend service
+	exampleClient := GETUSERHOUSES.NewExampleService("go.micro.srv.GetUserHouses", cli.Client())
+	userlogin, err := r.Cookie("userlogin")
+	if err != nil || userlogin.Value != "" {
+		//返回数据
+		response := map[string]interface{}{
+			"errno":  utils.RECODE_SESSIONERR,
+			"errmsg": utils.RecodeText(utils.RECODE_SESSIONERR),
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		// encode and write the response as json
+		if err := json.NewEncoder(w).Encode(response); err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		return
+	}
+	rsp, err := exampleClient.GetUserHouses(context.TODO(), &GETUSERHOUSES.Request{
+		Sessionid: userlogin.Value,
+	})
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	//房屋切片信息
+	house_list := []models.Bike{}
+	json.Unmarshal(rsp.Mix, &house_list)
+	//将房屋切片信息转换成map切片返回给前端
+	var houses []interface{}
+	for _, houseinfo := range house_list {
+		houses = append(houses, houseinfo.To_bike_info())
+	}
+	data_map := make(map[string]interface{})
+	data_map["houses"] = houses
+	//返回数据
+	response := map[string]interface{}{
+		"errno":  rsp.Errno,
+		"errmsg": rsp.Errmsg,
+		"data":   data_map,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	// encode and write the response as json
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+}
+
+func PostHouses(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	// decode the incoming request as json
+	beego.Info("PostHouses 发布房源信息 /api/v1.0/bike_houses ")
+	//将前端发送过来的数据整体读取
+	//body是一个json的二进制流
+	body, _ := ioutil.ReadAll(r.Body) //([]byte,error)
+
+	userlogin, err := r.Cookie("userlogin")
+	if err != nil || userlogin.Value != "" {
+		//返回数据
+		response := map[string]interface{}{
+			"errno":  utils.RECODE_SESSIONERR,
+			"errmsg": utils.RecodeText(utils.RECODE_SESSIONERR),
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		// encode and write the response as json
+		if err := json.NewEncoder(w).Encode(response); err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		return
+	}
+
+	clint := micro.NewService()
+	clint.Init()
+	exampleClient := POSTHOUSES.NewExampleService("go.micro.srv.PostHouses", cli.Client())
+
+	rsp, err := exampleClient.PostHouses(context.TODO(), &POSTHOUSES.Request{
+		Sessionid: userlogin.Value,
+		Max:       body,
+	})
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	data := make(map[string]interface{})
+	data["house_id"] = rsp.HouseId
+	response := map[string]interface{}{
+		"erron":  rsp.Errno,
+		"errmsg": rsp.Errmsg,
+		"data":   data,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	//将map转化为json 返回给前端
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+}
