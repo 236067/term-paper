@@ -2,7 +2,7 @@ package main
 
 import (
 	"BikeWeb/handler"
-	_ "IhomeWeb/model"
+	_ "BikeWeb/model"
 	"github.com/go-acme/lego/log"
 	"go-micro/web"
 	"net/http"
