@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"IhomeWeb/model"
-	"IhomeWeb/utils"
+	"BikeWeb/model"
+	"BikeWeb/utils"
 	example "PostHouses/proto/example"
 	"encoding/json"
 	"github.com/astaxie/beego/adapter/orm"
