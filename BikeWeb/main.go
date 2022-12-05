@@ -30,7 +30,7 @@ func main() {
 	//欺骗浏览器  session index
 	rou.GET("/api/v1.0/session", handler.GetSession)
 	//session
-	rou.GET("/api/v1.0/house/index", handler.GetIndex)
+	rou.GET("/api/v1.0/bike/index", handler.GetIndex)
 	//获取图片验证码
 	rou.GET("/api/v1.0/imagecode/:uuid", handler.GetImageCd)
 	//用户注册
