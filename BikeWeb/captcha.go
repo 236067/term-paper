@@ -22,5 +22,3 @@ http.HandleFunc("/r", func(w http.ResponseWriter, r *http.Request) {
 img, str := cap.Create(4, captcha.NUM)
 png.Encode(w, img)
 
-链接：https://www.waimaiguai.com/technology/article/4011700
-来源：外卖怪
